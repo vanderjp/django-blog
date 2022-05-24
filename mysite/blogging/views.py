@@ -22,7 +22,7 @@ def list_view(request):
     template = loader.get_template('blogging/list.html')
     context = {'posts': posts}
     body = template.render(context)
-    return render(request, 'blogging\list.html', context)
+    return render(request, 'blogging/list.html', context)
 
 
 def detail_view(request, post_id):
