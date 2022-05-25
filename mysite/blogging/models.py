@@ -1,5 +1,6 @@
-from django.db import models
+from django.contrib import admin
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class Post(models.Model):
@@ -24,3 +25,18 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
+
+
+class CategoryAdmin(admin.ModelAdmin):
+    fields = ('name', 'description')
+    # exclude = ('posts',)
+
+
+class CategoryInLine(admin.StackedInline):
+    model = Category
+
+
+class PostAdmin(admin.ModelAdmin):
+    inlines = [
+        CategoryInLine
+    ]
