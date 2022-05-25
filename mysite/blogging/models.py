@@ -25,18 +25,3 @@ class Category(models.Model):
 
     class Meta:
         verbose_name_plural = 'Categories'
-
-
-class CategoryAdmin(admin.ModelAdmin):
-    fields = ('name', 'description')
-    # exclude = ('posts',)
-
-
-class CategoryInLine(admin.StackedInline):
-    model = Category
-
-
-class PostAdmin(admin.ModelAdmin):
-    inlines = [
-        CategoryInLine
-    ]
