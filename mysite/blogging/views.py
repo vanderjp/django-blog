@@ -11,14 +11,6 @@ class BlogListView(ListView):
     template_name = 'blogging/list.html'
 
 
-# def detail_view(request, post_id):
-#     published = Post.objects.exclude(published_date__exact=None)
-#     try:
-#         post = published.get(pk=post_id)
-#     except Post.DoesNotExist:
-#         raise Http404
-#     context = {'post': post}
-#     return render(request, 'blogging/detail.html', context)
 class BlogDetailView(DetailView):
     queryset = Post.objects.exclude(published_date__exact=None)
     template_name = 'blogging/detail.html'
