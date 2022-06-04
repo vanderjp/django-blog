@@ -27,7 +27,7 @@ jobs:
           pip install -r requirements.txt
       - name: Check Formatting
         run: |
-          black --check blogging mysite polling --exclude **/*_initial.py
+          black --check blogging mysite polling --exclude *_initial.py
       - name: Run Tests
         run: |
           python manage.py test
