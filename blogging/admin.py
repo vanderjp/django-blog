@@ -4,7 +4,7 @@ from blogging.models import Post, Category
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    exclude = ('posts',)
+    exclude = ("posts",)
 
 
 class CategoryInLine(admin.StackedInline):
@@ -13,6 +13,4 @@ class CategoryInLine(admin.StackedInline):
 
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-    inlines = [
-        CategoryInLine
-    ]
+    inlines = [CategoryInLine]
